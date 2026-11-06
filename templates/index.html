@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" /> <!--Link to the CSS file for styling the webpage -->
+  <script src="{{ url_for('static', filename='script.js') }}" defer></script> <!--Link to the JavaScript file for adding interactivity to the webpage -->
+  <meta charset="UTF-8">
+  <title>UK Job Market Tracker</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!--Link to the Chart.js library for creating charts on the webpage -->
+</head>
+
+<body>
+  <h1>UK Industry Market Tracker</h1> 
+  <div id="info-list">
+    <p>Data is from the Office for National Statistics</p>
+    <p>Demand change are based on the last 12 months of data</p>
+  </div>
+
+  <div class="industry-container"> <!--Container for the industry selection and comparison elements-->
+
+    <div id = "industry1"> <!--Container for the first (left) industry selection-->
+
+    <select id="industry-select-left">
+      <option value="">Loading industries...</option>
+    </select>
+
+    <button id="compare-button">Compare Industries</button>
+
+    <button id="update-button">Update</button>
+
+    <div class = "description-container">
+
+      <div class = "description">
+        <h3>Mean Salary</h3>
+        <p id ="mean-salary1">N/A</p>
+      </div>
+
+      <div class = "description">
+        <h3>Change in Jobs</h3>
+        <p id = "demand-change1">N/A</p>
+      </div>
+    </div>
+    </div>
+
+    <div id = "industry2"> <!--Container for the second (right) industry selection-->
+
+    </div>
+
+  </div>
+
+<div class="chart-wrapper"> <!--Wrapper for the trend chart element-->
+  <canvas id="trend-chart"></canvas> <!--Canvas element for displaying the trend chart-->
+</div>
+
+</body>
+</html>
